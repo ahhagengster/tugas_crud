@@ -7,9 +7,7 @@
         <div class="col">
             <h1>About Me</h1>
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Tempora quos odio labore nesciunt, incidunt eos modi ullam rem culpa error,
-                ab mollitia, est natus accusantium molestiae a inventore libero eius?
+                Toko ini dibangun pada tahun 1560 Masehi sebelum saya lahir.
             </p>
         </div>
     </div>
