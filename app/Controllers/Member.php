@@ -16,11 +16,24 @@ class Member extends BaseController
 
     public function index()
     {
-        // $member = $this->memberModel->findAll();
+        $currentPage = $this->request->getVar('page_member') ? $this->request->getVar('page_member') : 1;
+        
+        $cari = $this->request->getVar('keyword');
+        if($cari){
+            $member = $this->memberModel->search($cari);
+            $isSearch =true;
+        }else {
+            $member = $this->memberModel;
+            $isSearch =false;
+        }
+
+
         $data = [
             'title'         => 'Daftar Buku',
-            'member'          => $this->memberModel->paginate(5, 'memberdata'),
-            'pager'         => $this->memberModel->pager
+            'member'        => $member->paginate(5, 'memberdata'),
+            'pager'         => $member->pager,
+            'currentPage'   => $currentPage,
+            'isSearch'      => $isSearch
         ];
         return view('member/index', $data);
     }    
